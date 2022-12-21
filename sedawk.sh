@@ -22,6 +22,6 @@ mv passwd_tmp passwd_new
 sed -i '/daemon/d' passwd_new
 
 #f. Change shell for all users with even UID to /bin/zsh
-awk -F: 'BEGIN {OFS=":"} $2 % 2 == 0 { $4 = "/bin/bash" } {print}' passwd_new > passwd_tmp
+awk -F: 'BEGIN {OFS=":"} $2 % 2 == 0 { $4 = "/bin/zsh" } {print}' passwd_new > passwd_tmp
 mv passwd_tmp passwd_new
 
